@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Thành Viên & Bài 10 Tin Học 12</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Toast Thông Báo Sao Chép -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-xl flex items-center space-x-3">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toast-message" class="font-medium text-sm">Đã sao chép nội dung thành công!</span>
+    </div>
+
+    <!-- Thanh Điều Hướng (Navbar) -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-200">
+                    <i class="fa-solid fa-code text-lg"></i>
+                </div>
+                <span class="font-bold text-lg text-slate-900 tracking-tight">Nhóm 10 - Tin Học 12</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#members" class="hover:text-indigo-600 transition">Thành Viên Nhóm</a>
+                <a href="#practice-10" class="hover:text-indigo-600 transition">Luyện Tập & Vận Dụng Bài 10</a>
+            </nav>
+            <div>
+                <a href="#practice-10" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-medium shadow-md shadow-indigo-100 transition">Xem Bài 10</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Phần Mở Đầu (Hero) -->
+    <section class="relative py-20 bg-gradient-to-br from-slate-900 via-indigo-950 to-indigo-900 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">Trang Web Dự Án Học Tập</span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 max-w-3xl mx-auto leading-tight">
+                Hồ Sơ Thành Viên & <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-300">Bài 10 SGK Tin Học 12</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light">
+                Nơi tổng hợp thông tin chi tiết các thành viên trong nhóm cùng đầy đủ mã nguồn Luyện tập và Vận dụng Bài 10 giúp bạn dễ dàng sao chép.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#members" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/30 transition">Xem Thành Viên</a>
+                <a href="#practice-10" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium px-6 py-3 rounded-xl transition">Bài Tập Bài 10</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="flex-grow">
+        <!-- PHẦN 1: GIỚI THIỆU THÀNH VIÊN -->
+        <section id="members" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Thành Viên Nhóm</span>
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-1">Danh Sách Thành Viên & Sở Thích</h2>
+                <p class="text-slate-500 mt-2 max-w-xl mx-auto">Thông tin cá nhân, ngày sinh và sở thích riêng của từng thành viên trong nhóm.</p>
+                <div class="w-16 h-1 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Lưới thành viên (5 thành viên) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Thành viên 1: Nguyễn Tấn Hưng -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl shadow-slate-100/80 hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://placehold.co/150x150/4f46e5/ffffff?text=NTH" alt="Nguyễn Tấn Hưng" class="w-16 h-16 rounded-full object-cover border-2 border-indigo-200 group-hover:scale-105 transition">
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Nguyễn Tấn Hưng</h3>
+                            <p class="text-xs text-indigo-600 font-semibold uppercase">Thành viên nhóm</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="flex items-center"><i class="fa-solid fa-cake-candles w-6 text-indigo-500"></i> <strong class="mr-1">Ngày sinh:</strong> 25 tháng 8 năm 2009</p>
+                        <p class="flex items-center"><i class="fa-solid fa-futbol w-6 text-indigo-500"></i> <strong class="mr-1">Sở thích:</strong> Thích bóng đá</p>
+                    </div>
+                </div>
+
+                <!-- Thành viên 2: Huỳnh Văn Tỷ -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl shadow-slate-100/80 hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://placehold.co/150x150/0ea5e9/ffffff?text=HVT" alt="Huỳnh Văn Tỷ" class="w-16 h-16 rounded-full object-cover border-2 border-sky-200 group-hover:scale-105 transition">
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Huỳnh Văn Tỷ</h3>
+                            <p class="text-xs text-sky-600 font-semibold uppercase">Thành viên nhóm</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="flex items-center"><i class="fa-solid fa-cake-candles w-6 text-sky-500"></i> <strong class="mr-1">Ngày sinh:</strong> 27 tháng 6 năm 2009</p>
+                        <p class="flex items-center"><i class="fa-solid fa-chess w-6 text-sky-500"></i> <strong class="mr-1">Sở thích:</strong> Chơi cờ</p>
+                    </div>
+                </div>
+
+                <!-- Thành viên 3: Nguyễn Thành Đạt -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl shadow-slate-100/80 hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://placehold.co/150x150/10b981/ffffff?text=NTĐ" alt="Nguyễn Thành Đạt" class="w-16 h-16 rounded-full object-cover border-2 border-emerald-200 group-hover:scale-105 transition">
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Nguyễn Thành Đạt</h3>
+                            <p class="text-xs text-emerald-600 font-semibold uppercase">Thành viên nhóm</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="flex items-center"><i class="fa-solid fa-cake-candles w-6 text-emerald-500"></i> <strong class="mr-1">Ngày sinh:</strong> 9 tháng 5 năm 2009</p>
+                        <p class="flex items-center"><i class="fa-solid fa-gamepad w-6 text-emerald-500"></i> <strong class="mr-1">Sở thích:</strong> Chơi game ko nghỉ</p>
+                    </div>
+                </div>
+
+                <!-- Thành viên 4: Võ Duy Bảo -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl shadow-slate-100/80 hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://placehold.co/150x150/f59e0b/ffffff?text=VDB" alt="Võ Duy Bảo" class="w-16 h-16 rounded-full object-cover border-2 border-amber-200 group-hover:scale-105 transition">
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Võ Duy Bảo</h3>
+                            <p class="text-xs text-amber-600 font-semibold uppercase">Thành viên nhóm</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="flex items-center"><i class="fa-solid fa-cake-candles w-6 text-amber-500"></i> <strong class="mr-1">Ngày sinh:</strong> 2 tháng 1 năm 2009</p>
+                        <p class="flex items-center"><i class="fa-solid fa-shield-halved w-6 text-amber-500"></i> <strong class="mr-1">Sở thích:</strong> Chơi liên quân</p>
+                    </div>
+                </div>
+
+                <!-- Thành viên 5: Võ Trương Kì Duyên -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xl shadow-slate-100/80 hover:shadow-2xl transition duration-300 group sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://placehold.co/150x150/ec4899/ffffff?text=VTKD" alt="Võ Trương Kì Duyên" class="w-16 h-16 rounded-full object-cover border-2 border-pink-200 group-hover:scale-105 transition">
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Võ Trương Kì Duyên</h3>
+                            <p class="text-xs text-pink-600 font-semibold uppercase">Thành viên nhóm</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <p class="flex items-center"><i class="fa-solid fa-cake-candles w-6 text-pink-500"></i> <strong class="mr-1">Ngày sinh:</strong> 5 tháng 8 năm 2009</p>
+                        <p class="flex items-center"><i class="fa-solid fa-bag-shopping w-6 text-pink-500"></i> <strong class="mr-1">Sở thích:</strong> Thích mua sắm</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PHẦN 2: LUYỆN TẬP VÀ VẬN DỤNG BÀI 10 (TIN HỌC 12) -->
+        <section id="practice-10" class="py-20 bg-slate-100/80 border-t border-slate-200">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Tài Liệu Học Tập</span>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight mt-1">Luyện Tập & Vận Dụng Bài 10 (Tin Học 12)</h2>
+                    <p class="text-slate-500 mt-2 max-w-xl mx-auto">Toàn bộ lời giải và đoạn mã nguồn HTML được trình bày chi tiết. Bấm nút "Sao chép mã" để copy nhanh nội dung.</p>
+                    <div class="w-16 h-1 bg-indigo-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="space-y-12">
+
+                    <!-- LUYỆN TẬP 1 -->
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100">
+                            <div>
+                                <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Luyện Tập 1</span>
+                                <h3 class="font-bold text-slate-900 text-lg mt-2">Trang 61 - SGK Tin Học 12</h3>
+                            </div>
+                            <button onclick="copyContent('code-lt1', 'Đã sao chép mã Luyện tập 1!')" class="inline-flex items-center space-x-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2.5 rounded-xl text-xs font-semibold transition active:scale-95 self-start sm:self-auto">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Sao chép mã nguồn</span>
+                            </button>
+                        </div>
+                        
+                        <p class="text-slate-700 font-medium mb-4">
+                            <strong>Đề bài:</strong> Viết đoạn mã để tạo liên kết quay về trang chủ <code class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-sm font-mono">CLB.html</code> trong trang <code class="bg-slate-100 text-indigo-600 px-2 py-0.5 rounded text-sm font-mono">thong_tin.html</code>.
+                        </p>
+
+                        <div class="bg-slate-900 text-slate-200 rounded-xl p-5 font-mono text-xs sm:text-sm overflow-x-auto shadow-inner relative">
+                            <pre id="code-lt1">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Thông tin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Nội dung của trang thông tin --&gt;
+    &lt;h1&gt;Thông tin CLB&lt;/h1&gt;
+    &lt;p&gt;Đây là trang thông tin về CLB của chúng ta.&lt;/p&gt;
+    &lt;!-- Liên kết quay về trang chủ --&gt;
+    &lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        </div>
+                    </div>
+
+                    <!-- LUYỆN TẬP 2 -->
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100">
+                            <div>
+                                <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Luyện Tập 2</span>
+                                <h3 class="font-bold text-slate-900 text-lg mt-2">Trang 61 - SGK Tin Học 12</h3>
+                            </div>
+                            <button onclick="copyContent('code-lt2', 'Đã sao chép mã Luyện tập 2!')" class="inline-flex items-center space-x-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 px-4 py-2.5 rounded-xl text-xs font-semibold transition active:scale-95 self-start sm:self-auto">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Sao chép mã nguồn</span>
+                            </button>
+                        </div>
+                        
+                        <p class="text-slate-700 font-medium mb-4">
+                            <strong>Đề bài:</strong> Viết một trang web giới thiệu bản thân, trong đó để ít nhất 3 liên kết tới trang web (có thể là Facebook) của ba bạn cùng lớp.
+                        </p>
+
+                        <div class="bg-slate-900 text-slate-200 rounded-xl p-5 font-mono text-xs sm:text-sm overflow-x-auto shadow-inner relative">
+                            <pre id="code-lt2">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        </div>
+                    </div>
+
+                    <!-- VẬN DỤNG -->
+                    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100">
+                            <div>
+                                <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Vận Dụng</span>
+                                <h3 class="font-bold text-slate-900 text-lg mt-2">Trang 61 - SGK Tin Học 12</h3>
+                            </div>
+                            <button onclick="copyContent('code-vd', 'Đã sao chép mã Vận dụng!')" class="inline-flex items-center space-x-2 bg-teal-50 hover:bg-teal-100 text-teal-700 px-4 py-2.5 rounded-xl text-xs font-semibold transition active:scale-95 self-start sm:self-auto">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Sao chép mã nguồn</span>
+                            </button>
+                        </div>
+                        
+                        <p class="text-slate-700 font-medium mb-4">
+                            <strong>Đề bài:</strong> Viết thêm các đoạn giới thiệu (địa điểm số, thành viên, thành tích, phí hội viên, điện thoại liên hệ) cho từng câu lạc bộ ở dưới bảng Lịch hoạt động công tác CLB thể thao rồi đặt liên kết từ tên câu lạc bộ trong bảng đến đoạn giới thiệu tương ứng.
+                        </p>
+
+                        <div class="bg-slate-900 text-slate-200 rounded-xl p-5 font-mono text-xs sm:text-sm overflow-x-auto shadow-inner relative">
+                            <pre id="code-vd">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lịch hoạt động công tác CLB thể thao&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Lịch hoạt động công tác CLB thể thao&lt;/h1&gt;
+    &lt;table border="1"&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Tên câu lạc bộ&lt;/th&gt;
+            &lt;th&gt;Lịch hoạt động&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;a href="#club1"&gt;Câu lạc bộ A&lt;/a&gt;&lt;/td&gt;
+            &lt;td&gt;Thứ Hai, Thứ Tư, Thứ Sáu - 18:00 đến 20:00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;a href="#club2"&gt;Câu lạc bộ B&lt;/a&gt;&lt;/td&gt;
+            &lt;td&gt;Thứ Ba, Thứ Năm - 16:00 đến 18:00&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;h2 id="club1"&gt;Câu lạc bộ A&lt;/h2&gt;
+    &lt;p&gt;Địa điểm: Sân Bóng XYZ&lt;/p&gt;
+    &lt;p&gt;Thành viên: 50&lt;/p&gt;
+    &lt;p&gt;Thành tích: Đạt giải nhất giải đấu Thể thao X năm 20XX&lt;/p&gt;
+    &lt;p&gt;Phí hội viên: 100.000 đồng/tháng&lt;/p&gt;
+    &lt;p&gt;Điện thoại liên hệ: 0123 456 789&lt;/p&gt;
+
+    &lt;h2 id="club2"&gt;Câu lạc bộ B&lt;/h2&gt;
+    &lt;p&gt;Địa điểm: Bể Bơi ABC&lt;/p&gt;
+    &lt;p&gt;Thành viên: 30&lt;/p&gt;
+    &lt;p&gt;Thành tích: Huy chương vàng môn bơi lội tại Hội thao Y năm 20XX&lt;/p&gt;
+    &lt;p&gt;Phí hội viên: 150.000 đồng/tháng&lt;/p&gt;
+    &lt;p&gt;Điện thoại liên hệ: 0987 654 321&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chân Trang (Footer) -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <p class="text-white font-bold text-lg">Dự Án Học Tập - Nhóm 10</p>
+                <p class="text-sm mt-1">Trang web hỗ trợ học tập môn Tin Học 12.</p>
+            </div>
+            <p class="text-xs text-slate-500">&copy; 2026 Bản quyền thuộc về Nhóm 10. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Xử Lý Sao Chép & Thông Báo -->
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // Hàm copy nội dung của một phần tử bằng ID
+        function copyContent(elementId, successMsg) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            const textToCopy = el.innerText;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast(successMsg);
+                }).catch(err => {
+                    fallbackCopyText(textToCopy, successMsg);
+                });
+            } else {
+                fallbackCopyText(textToCopy, successMsg);
+            }
+        }
+
+        // Fallback khi trình duyệt chặn clipboard API
+        function fallbackCopyText(text, successMsg) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.opacity = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast(successMsg);
+                } else {
+                    showToast('Không thể sao chép. Vui lòng thử lại!');
+                }
+            } catch (err) {
+                showToast('Lỗi sao chép nội dung!');
+            }
+
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
